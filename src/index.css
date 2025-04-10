@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221 53% 35%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +91,44 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .top-nav-link {
+    @apply text-xs px-2 py-1 border-r last:border-r-0 border-gray-300 hover:text-sbi-orange transition-colors;
+  }
+  
+  .main-nav-link {
+    @apply px-4 py-2 text-white hover:bg-sbi-lightBlue transition-colors duration-200;
+  }
+  
+  .login-input {
+    @apply w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-sbi-blue;
+  }
+  
+  .feature-card {
+    @apply bg-white shadow-md rounded p-4 hover:shadow-lg transition-shadow;
+  }
+  
+  .news-item {
+    @apply p-3 border-b last:border-b-0 hover:bg-gray-50;
+  }
+  
+  .btn-primary {
+    @apply bg-sbi-blue text-white px-4 py-2 rounded font-medium hover:bg-sbi-lightBlue transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-sbi-orange text-white px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity;
   }
 }
