@@ -1,10 +1,21 @@
 
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Search } from 'lucide-react';
+import { Menu, X, ChevronDown, Search, Home, CreditCard, Briefcase, Clipboard, ShieldCheck, Headphones, HelpCircle, User, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { 
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
   
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   
@@ -14,15 +25,15 @@ const Header = () => {
       <div className="bg-gray-100 py-1 border-b border-gray-300">
         <div className="container flex justify-between items-center">
           <div className="hidden sm:flex space-x-1">
-            <a href="#" className="top-nav-link">Personal Banking</a>
-            <a href="#" className="top-nav-link">Corporate Banking</a>
-            <a href="#" className="top-nav-link">NRI Banking</a>
-            <a href="#" className="top-nav-link">About Us</a>
+            <Link to="/personal" className="top-nav-link flex items-center"><User size={14} className="mr-1" /> Personal Banking</Link>
+            <Link to="/corporate" className="top-nav-link flex items-center"><Briefcase size={14} className="mr-1" /> Corporate Banking</Link>
+            <Link to="/nri" className="top-nav-link flex items-center"><Globe size={14} className="mr-1" /> NRI Banking</Link>
+            <Link to="/about" className="top-nav-link flex items-center">About Us</Link>
           </div>
           <div className="hidden sm:flex space-x-1">
-            <a href="#" className="top-nav-link">Contact</a>
-            <a href="#" className="top-nav-link">Help</a>
-            <a href="#" className="top-nav-link">Sitemap</a>
+            <Link to="/contact" className="top-nav-link flex items-center">Contact</Link>
+            <Link to="/help" className="top-nav-link flex items-center"><HelpCircle size={14} className="mr-1" /> Help</Link>
+            <Link to="/sitemap" className="top-nav-link flex items-center">Sitemap</Link>
           </div>
           {/* Only shown on mobile */}
           <button 
@@ -68,14 +79,188 @@ const Header = () => {
       {/* Main navigation */}
       <div className="bg-sbi-blue">
         <div className="container">
-          <nav className="hidden md:flex">
-            <a href="#" className="main-nav-link font-medium">Home</a>
-            <a href="#" className="main-nav-link font-medium">Accounts</a>
-            <a href="#" className="main-nav-link font-medium">Cards</a>
-            <a href="#" className="main-nav-link font-medium">Loans</a>
-            <a href="#" className="main-nav-link font-medium">Investments</a>
-            <a href="#" className="main-nav-link font-medium">Services</a>
-          </nav>
+          {!isMobile ? (
+            <NavigationMenu className="w-full">
+              <NavigationMenuList className="flex justify-start w-full gap-0 h-auto">
+                <NavigationMenuItem>
+                  <Link to="/">
+                    <div className="main-nav-link flex items-center">
+                      <Home size={16} className="mr-2" />
+                      <span>Home</span>
+                    </div>
+                  </Link>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                    <div className="flex items-center">
+                      <Clipboard size={16} className="mr-2" />
+                      <span>Accounts</span>
+                    </div>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md">
+                    <ul className="grid w-[300px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/accounts/savings" className="block px-3 py-2 hover:bg-gray-100 rounded">Savings Accounts</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/accounts/current" className="block px-3 py-2 hover:bg-gray-100 rounded">Current Accounts</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/accounts/salary" className="block px-3 py-2 hover:bg-gray-100 rounded">Salary Accounts</Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                    <div className="flex items-center">
+                      <CreditCard size={16} className="mr-2" />
+                      <span>Cards</span>
+                    </div>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md">
+                    <ul className="grid w-[300px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/cards/credit-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Credit Cards</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/cards/debit-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Debit Cards</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/cards/prepaid-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Prepaid Cards</Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                    <div className="flex items-center">
+                      <Home size={16} className="mr-2" />
+                      <span>Loans</span>
+                    </div>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md">
+                    <ul className="grid w-[300px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/loans/home-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Home Loans</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/loans/personal-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Personal Loans</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/loans/car-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Car Loans</Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                    <div className="flex items-center">
+                      <Briefcase size={16} className="mr-2" />
+                      <span>Investments</span>
+                    </div>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md">
+                    <ul className="grid w-[300px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/investments/mutual-funds" className="block px-3 py-2 hover:bg-gray-100 rounded">Mutual Funds</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/investments/fixed-deposits" className="block px-3 py-2 hover:bg-gray-100 rounded">Fixed Deposits</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/investments/sip" className="block px-3 py-2 hover:bg-gray-100 rounded">SIP Investments</Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                    <div className="flex items-center">
+                      <ShieldCheck size={16} className="mr-2" />
+                      <span>Insurance</span>
+                    </div>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white shadow-md rounded-b-md">
+                    <ul className="grid w-[300px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/insurance/life" className="block px-3 py-2 hover:bg-gray-100 rounded">Life Insurance</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/insurance/health" className="block px-3 py-2 hover:bg-gray-100 rounded">Health Insurance</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/insurance/vehicle" className="block px-3 py-2 hover:bg-gray-100 rounded">Vehicle Insurance</Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <Link to="/support">
+                    <div className="main-nav-link flex items-center">
+                      <Headphones size={16} className="mr-2" />
+                      <span>Support</span>
+                    </div>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          ) : (
+            <nav className="flex">
+              <Link to="/" className="main-nav-link flex items-center flex-1 justify-center">
+                <Home size={16} className="mr-2" />
+                <span>Home</span>
+              </Link>
+              <Link to="/accounts" className="main-nav-link flex items-center flex-1 justify-center">
+                <Clipboard size={16} className="mr-2" />
+                <span>Accounts</span>
+              </Link>
+              <Link to="/cards" className="main-nav-link flex items-center flex-1 justify-center">
+                <CreditCard size={16} className="mr-2" />
+                <span>Cards</span>
+              </Link>
+              <Link to="/support" className="main-nav-link flex items-center flex-1 justify-center">
+                <Headphones size={16} className="mr-2" />
+                <span>Support</span>
+              </Link>
+            </nav>
+          )}
         </div>
       </div>
       
@@ -93,18 +278,41 @@ const Header = () => {
             </button>
           </div>
           <nav className="py-2">
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Home</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Personal Banking</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Corporate Banking</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">NRI Banking</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Accounts</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Cards</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Loans</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Investments</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Services</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">About Us</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Contact</a>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Help</a>
+            <Link to="/" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Home size={16} className="mr-2 text-sbi-blue" /> Home
+            </Link>
+            <Link to="/personal" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <User size={16} className="mr-2 text-sbi-blue" /> Personal Banking
+            </Link>
+            <Link to="/corporate" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Briefcase size={16} className="mr-2 text-sbi-blue" /> Corporate Banking
+            </Link>
+            <Link to="/nri" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Globe size={16} className="mr-2 text-sbi-blue" /> NRI Banking
+            </Link>
+            <Link to="/accounts" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Clipboard size={16} className="mr-2 text-sbi-blue" /> Accounts
+            </Link>
+            <Link to="/cards" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <CreditCard size={16} className="mr-2 text-sbi-blue" /> Cards
+            </Link>
+            <Link to="/loans" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Home size={16} className="mr-2 text-sbi-blue" /> Loans
+            </Link>
+            <Link to="/investments" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Briefcase size={16} className="mr-2 text-sbi-blue" /> Investments
+            </Link>
+            <Link to="/insurance" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <ShieldCheck size={16} className="mr-2 text-sbi-blue" /> Insurance
+            </Link>
+            <Link to="/services" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <Headphones size={16} className="mr-2 text-sbi-blue" /> Services
+            </Link>
+            <Link to="/about" className="block px-4 py-2 hover:bg-gray-100 flex items-center">About Us</Link>
+            <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100 flex items-center">Contact</Link>
+            <Link to="/help" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
+              <HelpCircle size={16} className="mr-2 text-sbi-blue" /> Help
+            </Link>
           </nav>
         </div>
       )}

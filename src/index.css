@@ -105,7 +105,7 @@
 
 @layer components {
   .top-nav-link {
-    @apply text-xs px-2 py-1 border-r last:border-r-0 border-gray-300 hover:text-sbi-orange transition-colors;
+    @apply text-xs px-2 py-1 border-r last:border-r-0 border-gray-300 hover:text-sbi-orange hover:bg-gray-200 transition-colors;
   }
   
   .main-nav-link {

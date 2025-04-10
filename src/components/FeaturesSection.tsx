@@ -1,5 +1,6 @@
 
 import { CreditCard, Home, Briefcase, Clipboard, ShieldCheck, Headphones } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FeaturesSection = () => {
   return (
@@ -18,21 +19,21 @@ const FeaturesSection = () => {
               <p className="text-gray-600 mb-4">
                 Explore our range of credit and debit cards designed to meet your needs. Enjoy exclusive benefits, rewards, and security features.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
+              <div className="grid grid-cols-1 gap-2">
+                <Link to="/cards/credit-cards" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Credit Cards</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/cards/debit-cards" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Debit Cards</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/cards/prepaid-cards" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Prepaid Cards</span>
-                </li>
-              </ul>
-              <a href="#" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</a>
+                </Link>
+              </div>
+              <Link to="/cards" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</Link>
             </div>
           </div>
           
@@ -46,21 +47,21 @@ const FeaturesSection = () => {
               <p className="text-gray-600 mb-4">
                 Find the perfect loan solution for your personal or business needs with competitive interest rates and flexible terms.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
+              <div className="grid grid-cols-1 gap-2">
+                <Link to="/loans/home-loans" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Home Loans</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/loans/personal-loans" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Personal Loans</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/loans/car-loans" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Car Loans</span>
-                </li>
-              </ul>
-              <a href="#" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</a>
+                </Link>
+              </div>
+              <Link to="/loans" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</Link>
             </div>
           </div>
           
@@ -74,21 +75,21 @@ const FeaturesSection = () => {
               <p className="text-gray-600 mb-4">
                 Grow your wealth with our range of investment products. Our expert advisors can guide you to make informed decisions.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
+              <div className="grid grid-cols-1 gap-2">
+                <Link to="/investments/mutual-funds" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Mutual Funds</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/investments/fixed-deposits" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Fixed Deposits</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/investments/sip" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>SIP Investments</span>
-                </li>
-              </ul>
-              <a href="#" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</a>
+                </Link>
+              </div>
+              <Link to="/investments" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</Link>
             </div>
           </div>
           
@@ -102,21 +103,21 @@ const FeaturesSection = () => {
               <p className="text-gray-600 mb-4">
                 Choose from our wide range of accounts designed to meet your financial needs, with convenient banking solutions.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
+              <div className="grid grid-cols-1 gap-2">
+                <Link to="/accounts/savings" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Savings Accounts</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/accounts/current" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Current Accounts</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/accounts/salary" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Salary Accounts</span>
-                </li>
-              </ul>
-              <a href="#" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</a>
+                </Link>
+              </div>
+              <Link to="/accounts" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</Link>
             </div>
           </div>
           
@@ -130,21 +131,21 @@ const FeaturesSection = () => {
               <p className="text-gray-600 mb-4">
                 Protect what matters most with our comprehensive insurance solutions for individuals and businesses.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
+              <div className="grid grid-cols-1 gap-2">
+                <Link to="/insurance/life" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Life Insurance</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/insurance/health" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Health Insurance</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/insurance/vehicle" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Vehicle Insurance</span>
-                </li>
-              </ul>
-              <a href="#" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</a>
+                </Link>
+              </div>
+              <Link to="/insurance" className="mt-4 inline-block text-sbi-blue hover:underline">Learn More →</Link>
             </div>
           </div>
           
@@ -158,21 +159,21 @@ const FeaturesSection = () => {
               <p className="text-gray-600 mb-4">
                 We're here to help with any banking queries you may have. Our support team is available 24/7 for assistance.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start">
+              <div className="grid grid-cols-1 gap-2">
+                <Link to="/support/customer-care" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Customer Care</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/support/grievance" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Grievance Redressal</span>
-                </li>
-                <li className="flex items-start">
+                </Link>
+                <Link to="/support/branch-locator" className="flex items-start hover:bg-gray-50 p-2 rounded transition-colors">
                   <span className="text-sbi-blue mr-2">•</span>
                   <span>Branch Locator</span>
-                </li>
-              </ul>
-              <a href="#" className="mt-4 inline-block text-sbi-blue hover:underline">Contact Us →</a>
+                </Link>
+              </div>
+              <Link to="/support" className="mt-4 inline-block text-sbi-blue hover:underline">Contact Us →</Link>
             </div>
           </div>
         </div>
