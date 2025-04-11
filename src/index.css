@@ -110,30 +110,55 @@
 
 @layer components {
   .top-nav-link {
-    @apply text-xs px-2 py-1 border-r last:border-r-0 border-gray-700 hover:text-yellow-400 hover:bg-gray-800 transition-colors;
+    @apply text-xs px-1 sm:px-2 py-1 border-r last:border-r-0 border-gray-700 hover:text-yellow-400 hover:bg-gray-800 transition-colors;
   }
   
   .main-nav-link {
-    @apply px-4 py-2 text-white hover:bg-yellow-700 transition-colors duration-200;
+    @apply px-2 sm:px-3 md:px-4 py-2 text-white hover:bg-yellow-700 transition-colors duration-200;
   }
   
   .login-input {
-    @apply w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-yellow-500;
+    @apply w-full p-1.5 sm:p-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-yellow-500;
   }
   
   .feature-card {
-    @apply bg-white shadow-md rounded p-4 hover:shadow-lg transition-shadow;
+    @apply bg-white shadow-md rounded p-2 sm:p-3 md:p-4 hover:shadow-lg transition-shadow;
   }
   
   .news-item {
-    @apply p-3 border-b last:border-b-0 hover:bg-gray-50;
+    @apply p-2 sm:p-3 border-b last:border-b-0 hover:bg-gray-50;
   }
   
   .btn-primary {
-    @apply bg-gray-800 text-white px-4 py-2 rounded font-medium hover:bg-yellow-600 transition-colors;
+    @apply bg-gray-800 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded font-medium hover:bg-yellow-600 transition-colors;
   }
   
   .btn-secondary {
-    @apply bg-yellow-500 text-black px-4 py-2 rounded font-medium hover:opacity-90 transition-opacity;
+    @apply bg-yellow-500 text-black px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded font-medium hover:opacity-90 transition-opacity;
+  }
+  
+  /* Responsive utilities */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto;
+    max-width: 1280px;
+  }
+}
+
+/* Media queries for responsive layouts */
+@media (max-width: 640px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .hide-on-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-on-desktop {
+    display: none;
   }
 }
