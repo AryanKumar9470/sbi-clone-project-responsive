@@ -15,8 +15,17 @@ import Public from "./pages/Public";
 import Investment from "./pages/Investment";
 import International from "./pages/International";
 import Quantitative from "./pages/Quantitative";
+import PrototypeBanner from "./components/PrototypeBanner";
 
-const queryClient = new QueryClient();
+// Create a prototype QueryClient with no retries for faster feedback
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -26,17 +35,46 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/accounts" element={<Accounts />} />
-          <Route path="/cards" element={<Cards />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/personal" element={<Personal />} />
-          <Route path="/corporate" element={<Corporate />} />
-          <Route path="/public" element={<Public />} />
-          <Route path="/investment" element={<Investment />} />
-          <Route path="/international" element={<International />} />
-          <Route path="/quantitative" element={<Quantitative />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/accounts" element={<>
+            <PrototypeBanner />
+            <Accounts />
+          </>} />
+          <Route path="/cards" element={<>
+            <PrototypeBanner />
+            <Cards />
+          </>} />
+          <Route path="/support" element={<>
+            <PrototypeBanner />
+            <Support />
+          </>} />
+          <Route path="/personal" element={<>
+            <PrototypeBanner />
+            <Personal />
+          </>} />
+          <Route path="/corporate" element={<>
+            <PrototypeBanner />
+            <Corporate />
+          </>} />
+          <Route path="/public" element={<>
+            <PrototypeBanner />
+            <Public />
+          </>} />
+          <Route path="/investment" element={<>
+            <PrototypeBanner />
+            <Investment />
+          </>} />
+          <Route path="/international" element={<>
+            <PrototypeBanner />
+            <International />
+          </>} />
+          <Route path="/quantitative" element={<>
+            <PrototypeBanner />
+            <Quantitative />
+          </>} />
+          <Route path="*" element={<>
+            <PrototypeBanner />
+            <NotFound />
+          </>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

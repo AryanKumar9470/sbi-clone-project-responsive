@@ -13,19 +13,11 @@ const HomeHero = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real app, this would connect to the backend
-    if (username && password) {
-      toast({
-        title: "Login Attempt",
-        description: "This is a demo. In a real app, this would connect to a backend.",
-      });
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Please enter both username and password",
-      });
-    }
+    // Simplified for prototype - always show success message
+    toast({
+      title: "Prototype Login",
+      description: "This is a prototype. Login successful!",
+    });
   };
   
   return (
@@ -87,10 +79,10 @@ const HomeHero = () => {
             <div className="relative h-[280px] md:h-full">
               <div className="absolute inset-0 flex items-center bg-black text-white p-8">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4">Welcome to Wealth Wave</h2>
-                  <p className="mb-6 max-w-lg">Your secure and sophisticated financial partner. Access personalized wealth management, innovative investment solutions, and comprehensive banking services.</p>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4">Prototype: Wealth Wave</h2>
+                  <p className="mb-6 max-w-lg">This is a prototype version demonstrating the UI and basic interactions. No actual banking services are available.</p>
                   <Link to="/explore" className="inline-flex items-center bg-yellow-500 text-black px-4 py-2 rounded font-medium hover:bg-yellow-600">
-                    Explore Services <ChevronRight size={16} className="ml-1" />
+                    Explore Demo <ChevronRight size={16} className="ml-1" />
                   </Link>
                 </div>
               </div>
@@ -98,35 +90,35 @@ const HomeHero = () => {
           </div>
         </div>
         
-        {/* Quick Links */}
+        {/* Quick Links - Simplified for prototype */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6">
           <div className="feature-card flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500 text-black mb-2">A</div>
-            <span className="text-sm">Account Statement</span>
+            <span className="text-sm">Demo Feature</span>
           </div>
           <div className="feature-card flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500 text-black mb-2">T</div>
-            <span className="text-sm">Fund Transfer</span>
+            <span className="text-sm">Demo Feature</span>
           </div>
           <div className="feature-card flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500 text-black mb-2">B</div>
-            <span className="text-sm">Pay Bills</span>
+            <span className="text-sm">Demo Feature</span>
           </div>
           <div className="feature-card flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500 text-black mb-2">C</div>
-            <span className="text-sm">Credit Cards</span>
+            <span className="text-sm">Demo Feature</span>
           </div>
           <div className="feature-card flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500 text-black mb-2">D</div>
-            <span className="text-sm">Deposits</span>
+            <span className="text-sm">Demo Feature</span>
           </div>
           <div className="feature-card flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500 text-black mb-2">E</div>
-            <span className="text-sm">e-Services</span>
+            <span className="text-sm">Demo Feature</span>
           </div>
         </div>
         
-        {/* Security Warning */}
+        {/* Prototype Notice */}
         <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -134,7 +126,7 @@ const HomeHero = () => {
             </div>
             <div className="ml-3">
               <p className="text-sm text-yellow-700">
-                <strong>Security Alert:</strong> Wealth Wave never asks for your personal information, password, OTP via email/SMS/phone call.
+                <strong>Prototype Notice:</strong> This is a non-functional prototype for demonstration purposes only. No real data is processed.
               </p>
             </div>
           </div>
