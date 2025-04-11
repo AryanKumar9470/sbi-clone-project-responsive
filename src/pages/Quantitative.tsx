@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { AreaChart, BarChart, LineChart, PieChart, Clock, Database, FileCog, Brain } from "lucide-react";
+import { AreaChart as AreaChartIcon, BarChart as BarChartIcon, LineChart as LineChartIcon, PieChart as PieChartIcon, Clock, Database, FileCog, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -15,7 +15,8 @@ import {
   ComposedChart,
   Legend,
   Bar,
-  Area
+  Area,
+  LineChart
 } from 'recharts';
 
 const data = [
@@ -49,7 +50,7 @@ const Quantitative = () => {
           <Tabs defaultValue="strategies" className="w-full">
             <TabsList className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-2">
               <TabsTrigger value="strategies" className="flex items-center">
-                <LineChart className="mr-2 h-4 w-4" /> Strategies
+                <LineChartIcon className="mr-2 h-4 w-4" /> Strategies
               </TabsTrigger>
               <TabsTrigger value="research" className="flex items-center">
                 <Brain className="mr-2 h-4 w-4" /> Research
@@ -58,7 +59,7 @@ const Quantitative = () => {
                 <Database className="mr-2 h-4 w-4" /> Technology
               </TabsTrigger>
               <TabsTrigger value="performance" className="flex items-center">
-                <AreaChart className="mr-2 h-4 w-4" /> Performance
+                <AreaChartIcon className="mr-2 h-4 w-4" /> Performance
               </TabsTrigger>
             </TabsList>
             
@@ -84,7 +85,7 @@ const Quantitative = () => {
                     <Card>
                       <CardHeader className="pb-2">
                         <CardTitle className="text-base flex items-center">
-                          <BarChart className="h-4 w-4 mr-2" />
+                          <BarChartIcon className="h-4 w-4 mr-2" />
                           Statistical Arbitrage
                         </CardTitle>
                       </CardHeader>
@@ -96,7 +97,7 @@ const Quantitative = () => {
                     <Card>
                       <CardHeader className="pb-2">
                         <CardTitle className="text-base flex items-center">
-                          <PieChart className="h-4 w-4 mr-2" />
+                          <PieChartIcon className="h-4 w-4 mr-2" />
                           Factor-Based Investing
                         </CardTitle>
                       </CardHeader>
