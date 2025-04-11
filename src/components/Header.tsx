@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Search, Home, CreditCard, Briefcase, Clipboard, ShieldCheck, Headphones, HelpCircle, User, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Search, Home, CreditCard, Briefcase, Clipboard, ShieldCheck, Headphones, HelpCircle, User, Globe, TrendingUp, LineChart, Landmark, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
@@ -22,22 +22,24 @@ const Header = () => {
   return (
     <header className="w-full">
       {/* Top navigation bar */}
-      <div className="bg-gray-100 py-1 border-b border-gray-300">
+      <div className="bg-gray-900 py-1 border-b border-yellow-500">
         <div className="container flex justify-between items-center">
           <div className="hidden sm:flex space-x-1">
-            <Link to="/personal" className="top-nav-link flex items-center"><User size={14} className="mr-1" /> Personal Banking</Link>
-            <Link to="/corporate" className="top-nav-link flex items-center"><Briefcase size={14} className="mr-1" /> Corporate Banking</Link>
-            <Link to="/nri" className="top-nav-link flex items-center"><Globe size={14} className="mr-1" /> NRI Banking</Link>
-            <Link to="/about" className="top-nav-link flex items-center">About Us</Link>
+            <Link to="/personal" className="top-nav-link flex items-center text-white hover:text-yellow-400"><User size={14} className="mr-1" /> Personal Banking</Link>
+            <Link to="/corporate" className="top-nav-link flex items-center text-white hover:text-yellow-400"><Briefcase size={14} className="mr-1" /> Corporate Banking</Link>
+            <Link to="/public" className="top-nav-link flex items-center text-white hover:text-yellow-400"><Landmark size={14} className="mr-1" /> Public Banking</Link>
+            <Link to="/investment" className="top-nav-link flex items-center text-white hover:text-yellow-400"><TrendingUp size={14} className="mr-1" /> Investment</Link>
+            <Link to="/international" className="top-nav-link flex items-center text-white hover:text-yellow-400"><Globe size={14} className="mr-1" /> International</Link>
+            <Link to="/quantitative" className="top-nav-link flex items-center text-white hover:text-yellow-400"><LineChart size={14} className="mr-1" /> Quantitative</Link>
           </div>
           <div className="hidden sm:flex space-x-1">
-            <Link to="/contact" className="top-nav-link flex items-center">Contact</Link>
-            <Link to="/help" className="top-nav-link flex items-center"><HelpCircle size={14} className="mr-1" /> Help</Link>
-            <Link to="/sitemap" className="top-nav-link flex items-center">Sitemap</Link>
+            <Link to="/contact" className="top-nav-link flex items-center text-white hover:text-yellow-400">Contact</Link>
+            <Link to="/help" className="top-nav-link flex items-center text-white hover:text-yellow-400"><HelpCircle size={14} className="mr-1" /> Help</Link>
+            <Link to="/sitemap" className="top-nav-link flex items-center text-white hover:text-yellow-400">Sitemap</Link>
           </div>
           {/* Only shown on mobile */}
           <button 
-            className="sm:hidden text-sbi-blue p-1"
+            className="sm:hidden text-white p-1"
             onClick={toggleMobileMenu}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -46,14 +48,14 @@ const Header = () => {
       </div>
       
       {/* Logo and search bar */}
-      <div className="bg-white py-2">
+      <div className="bg-black py-2">
         <div className="container flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="mr-4">
               <img 
-                src="https://via.placeholder.com/150x50?text=SBI+Logo" 
-                alt="State Bank of India" 
-                className="h-10"
+                src="/lovable-uploads/wealth-wave-logo.png" 
+                alt="Wealth Wave" 
+                className="h-14"
               />
             </Link>
           </div>
@@ -62,13 +64,13 @@ const Header = () => {
               <input 
                 type="text" 
                 placeholder="Search..." 
-                className="w-full border border-gray-300 rounded py-1 px-3 pr-10"
+                className="w-full border border-yellow-500 bg-gray-900 text-white rounded py-1 px-3 pr-10"
               />
-              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
+              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-yellow-500">
                 <Search size={16} />
               </button>
             </div>
-            <select className="border border-gray-300 rounded py-1 px-3">
+            <select className="border border-yellow-500 rounded py-1 px-3 bg-gray-900 text-white">
               <option value="en">English</option>
               <option value="hi">हिन्दी</option>
             </select>
@@ -77,7 +79,7 @@ const Header = () => {
       </div>
       
       {/* Main navigation */}
-      <div className="bg-sbi-blue">
+      <div className="bg-gray-800">
         <div className="container">
           {!isMobile ? (
             <NavigationMenu className="w-full">
@@ -92,7 +94,7 @@ const Header = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent hover:bg-yellow-700 data-[state=open]:bg-yellow-600 data-[state=open]:text-white h-auto">
                     <div className="flex items-center">
                       <Clipboard size={16} className="mr-2" />
                       <span>Accounts</span>
@@ -115,12 +117,17 @@ const Header = () => {
                           <Link to="/accounts/salary" className="block px-3 py-2 hover:bg-gray-100 rounded">Salary Accounts</Link>
                         </NavigationMenuLink>
                       </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/accounts/wealth-management" className="block px-3 py-2 hover:bg-gray-100 rounded">Wealth Management</Link>
+                        </NavigationMenuLink>
+                      </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent hover:bg-yellow-700 data-[state=open]:bg-yellow-600 data-[state=open]:text-white h-auto">
                     <div className="flex items-center">
                       <CreditCard size={16} className="mr-2" />
                       <span>Cards</span>
@@ -148,7 +155,7 @@ const Header = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent hover:bg-yellow-700 data-[state=open]:bg-yellow-600 data-[state=open]:text-white h-auto">
                     <div className="flex items-center">
                       <Home size={16} className="mr-2" />
                       <span>Loans</span>
@@ -176,9 +183,9 @@ const Header = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent hover:bg-yellow-700 data-[state=open]:bg-yellow-600 data-[state=open]:text-white h-auto">
                     <div className="flex items-center">
-                      <Briefcase size={16} className="mr-2" />
+                      <TrendingUp size={16} className="mr-2" />
                       <span>Investments</span>
                     </div>
                   </NavigationMenuTrigger>
@@ -199,12 +206,17 @@ const Header = () => {
                           <Link to="/investments/sip" className="block px-3 py-2 hover:bg-gray-100 rounded">SIP Investments</Link>
                         </NavigationMenuLink>
                       </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/investments/stocks" className="block px-3 py-2 hover:bg-gray-100 rounded">Stocks & ETFs</Link>
+                        </NavigationMenuLink>
+                      </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent data-[state=open]:bg-sbi-lightBlue data-[state=open]:text-white h-auto">
+                  <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent hover:bg-yellow-700 data-[state=open]:bg-yellow-600 data-[state=open]:text-white h-auto">
                     <div className="flex items-center">
                       <ShieldCheck size={16} className="mr-2" />
                       <span>Insurance</span>
@@ -266,52 +278,61 @@ const Header = () => {
       
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute w-full z-50">
-          <div className="py-2 px-4 flex items-center border-b">
+        <div className="md:hidden bg-gray-900 shadow-lg absolute w-full z-50">
+          <div className="py-2 px-4 flex items-center border-b border-gray-700">
             <input 
               type="text" 
               placeholder="Search..." 
-              className="flex-1 border border-gray-300 rounded py-1 px-3"
+              className="flex-1 border border-yellow-500 bg-gray-800 text-white rounded py-1 px-3"
             />
-            <button className="ml-2 text-gray-500">
+            <button className="ml-2 text-yellow-500">
               <Search size={16} />
             </button>
           </div>
           <nav className="py-2">
-            <Link to="/" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Home size={16} className="mr-2 text-sbi-blue" /> Home
+            <Link to="/" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Home size={16} className="mr-2 text-yellow-500" /> Home
             </Link>
-            <Link to="/personal" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <User size={16} className="mr-2 text-sbi-blue" /> Personal Banking
+            <Link to="/personal" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <User size={16} className="mr-2 text-yellow-500" /> Personal Banking
             </Link>
-            <Link to="/corporate" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Briefcase size={16} className="mr-2 text-sbi-blue" /> Corporate Banking
+            <Link to="/corporate" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Briefcase size={16} className="mr-2 text-yellow-500" /> Corporate Banking
             </Link>
-            <Link to="/nri" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Globe size={16} className="mr-2 text-sbi-blue" /> NRI Banking
+            <Link to="/public" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Landmark size={16} className="mr-2 text-yellow-500" /> Public Banking
             </Link>
-            <Link to="/accounts" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Clipboard size={16} className="mr-2 text-sbi-blue" /> Accounts
+            <Link to="/investment" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <TrendingUp size={16} className="mr-2 text-yellow-500" /> Investment
             </Link>
-            <Link to="/cards" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <CreditCard size={16} className="mr-2 text-sbi-blue" /> Cards
+            <Link to="/international" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Globe size={16} className="mr-2 text-yellow-500" /> International
             </Link>
-            <Link to="/loans" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Home size={16} className="mr-2 text-sbi-blue" /> Loans
+            <Link to="/quantitative" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <LineChart size={16} className="mr-2 text-yellow-500" /> Quantitative
             </Link>
-            <Link to="/investments" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Briefcase size={16} className="mr-2 text-sbi-blue" /> Investments
+            <Link to="/accounts" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Clipboard size={16} className="mr-2 text-yellow-500" /> Accounts
             </Link>
-            <Link to="/insurance" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <ShieldCheck size={16} className="mr-2 text-sbi-blue" /> Insurance
+            <Link to="/cards" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <CreditCard size={16} className="mr-2 text-yellow-500" /> Cards
             </Link>
-            <Link to="/services" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <Headphones size={16} className="mr-2 text-sbi-blue" /> Services
+            <Link to="/loans" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Home size={16} className="mr-2 text-yellow-500" /> Loans
             </Link>
-            <Link to="/about" className="block px-4 py-2 hover:bg-gray-100 flex items-center">About Us</Link>
-            <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100 flex items-center">Contact</Link>
-            <Link to="/help" className="block px-4 py-2 hover:bg-gray-100 flex items-center">
-              <HelpCircle size={16} className="mr-2 text-sbi-blue" /> Help
+            <Link to="/investments" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <TrendingUp size={16} className="mr-2 text-yellow-500" /> Investments
+            </Link>
+            <Link to="/insurance" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <ShieldCheck size={16} className="mr-2 text-yellow-500" /> Insurance
+            </Link>
+            <Link to="/services" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <Headphones size={16} className="mr-2 text-yellow-500" /> Services
+            </Link>
+            <Link to="/about" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">About Us</Link>
+            <Link to="/contact" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">Contact</Link>
+            <Link to="/help" className="block px-4 py-2 hover:bg-gray-800 flex items-center text-white">
+              <HelpCircle size={16} className="mr-2 text-yellow-500" /> Help
             </Link>
           </nav>
         </div>
