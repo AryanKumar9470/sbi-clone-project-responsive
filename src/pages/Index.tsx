@@ -5,12 +5,10 @@ import HomeHero from "@/components/HomeHero";
 import FeaturesSection from "@/components/FeaturesSection";
 import NewsSection from "@/components/NewsSection";
 import RegistrationBanner from "@/components/RegistrationBanner";
-import PrototypeBanner from "@/components/PrototypeBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-      <PrototypeBanner />
       <Header />
       <main className="flex-grow">
         <HomeHero />
