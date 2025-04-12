@@ -20,6 +20,17 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 
+// Account subpages
+import SavingsAccounts from "./pages/accounts/Savings";
+import CurrentAccounts from "./pages/accounts/Current";
+import SalaryAccounts from "./pages/accounts/Salary";
+import WealthManagement from "./pages/accounts/WealthManagement";
+
+// Cards subpages
+import CreditCards from "./pages/cards/CreditCards";
+import DebitCards from "./pages/cards/DebitCards";
+import PrepaidCards from "./pages/cards/PrepaidCards";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -42,6 +53,18 @@ const App = () => (
             <Route path="/investment" element={<ProtectedRoute><Investment /></ProtectedRoute>} />
             <Route path="/international" element={<ProtectedRoute><International /></ProtectedRoute>} />
             <Route path="/quantitative" element={<ProtectedRoute><Quantitative /></ProtectedRoute>} />
+            
+            {/* Account subpages */}
+            <Route path="/accounts/savings" element={<ProtectedRoute><SavingsAccounts /></ProtectedRoute>} />
+            <Route path="/accounts/current" element={<ProtectedRoute><CurrentAccounts /></ProtectedRoute>} />
+            <Route path="/accounts/salary" element={<ProtectedRoute><SalaryAccounts /></ProtectedRoute>} />
+            <Route path="/accounts/wealth-management" element={<ProtectedRoute><WealthManagement /></ProtectedRoute>} />
+            
+            {/* Cards subpages */}
+            <Route path="/cards/credit-cards" element={<ProtectedRoute><CreditCards /></ProtectedRoute>} />
+            <Route path="/cards/debit-cards" element={<ProtectedRoute><DebitCards /></ProtectedRoute>} />
+            <Route path="/cards/prepaid-cards" element={<ProtectedRoute><PrepaidCards /></ProtectedRoute>} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
