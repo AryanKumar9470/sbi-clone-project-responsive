@@ -1,30 +1,40 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, ChevronRight } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const HomeHero = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { login } = useAuth();
+  const navigate = useNavigate();
   
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real app, this would connect to the backend
-    if (username && password) {
-      toast({
-        title: "Login Attempt",
-        description: "This is a demo. In a real app, this would connect to a backend.",
-      });
-    } else {
+    if (!username || !password) {
       toast({
         variant: "destructive",
         title: "Error",
         description: "Please enter both username and password",
       });
+      return;
+    }
+    
+    setIsLoading(true);
+    
+    try {
+      await login(username, password);
+      navigate('/dashboard');
+    } catch (error) {
+      // Error is handled by AuthContext
+    } finally {
+      setIsLoading(false);
     }
   };
   
@@ -51,6 +61,7 @@ const HomeHero = () => {
                   className="login-input"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
+                  disabled={isLoading}
                 />
               </div>
               <div className="mb-3">
@@ -60,6 +71,7 @@ const HomeHero = () => {
                   className="login-input"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  disabled={isLoading}
                 />
               </div>
               <div className="flex items-center mb-4">
@@ -67,8 +79,12 @@ const HomeHero = () => {
                 <label htmlFor="remember" className="text-sm">Remember Username</label>
               </div>
               <div className="flex justify-between items-center">
-                <Button type="submit" className="bg-yellow-500 hover:bg-yellow-600 text-black">
-                  LOGIN
+                <Button 
+                  type="submit" 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-black"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'LOGGING IN...' : 'LOGIN'}
                 </Button>
                 <a href="#" className="text-sm text-yellow-600 hover:underline">Forgot Password?</a>
               </div>
@@ -76,7 +92,7 @@ const HomeHero = () => {
             
             <div className="mt-4 pt-4 border-t border-gray-200">
               <div className="flex justify-between">
-                <a href="#" className="text-sm text-yellow-600 hover:underline">New User? Register</a>
+                <Link to="/register" className="text-sm text-yellow-600 hover:underline">New User? Register</Link>
                 <a href="#" className="text-sm text-yellow-600 hover:underline">Login with OTP</a>
               </div>
             </div>
