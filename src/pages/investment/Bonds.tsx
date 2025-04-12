@@ -45,7 +45,7 @@ const Bonds = () => {
         </div>
         
         {/* Page Header */}
-        <div className="bg-sbi-blue text-white py-8">
+        <div className="bg-yellow-600 text-white py-8">
           <div className="container">
             <div className="flex items-center">
               <FileText className="h-12 w-12 mr-4" />
@@ -65,27 +65,27 @@ const Bonds = () => {
                 <CardTitle>Government Bonds</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-blue-50 p-4 rounded-md mb-4">
-                  <p className="text-xl font-semibold text-blue-600">7.00%</p>
+                <div className="bg-yellow-50 p-4 rounded-md mb-4">
+                  <p className="text-xl font-semibold text-yellow-600">7.00%</p>
                   <p className="text-sm text-gray-500">Interest Rate</p>
                 </div>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Safest investment option</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Regular interest payouts</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Tax benefits available</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Invest Now</Button>
+                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Invest Now</Button>
               </CardFooter>
             </Card>
 
@@ -94,27 +94,27 @@ const Bonds = () => {
                 <CardTitle>Corporate Bonds</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-blue-50 p-4 rounded-md mb-4">
-                  <p className="text-xl font-semibold text-blue-600">8.50%</p>
+                <div className="bg-yellow-50 p-4 rounded-md mb-4">
+                  <p className="text-xl font-semibold text-yellow-600">8.50%</p>
                   <p className="text-sm text-gray-500">Interest Rate</p>
                 </div>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Higher returns than govt bonds</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Investment in top-rated companies</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Fixed income stream</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Invest Now</Button>
+                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Invest Now</Button>
               </CardFooter>
             </Card>
 
@@ -123,27 +123,27 @@ const Bonds = () => {
                 <CardTitle>Tax-Free Bonds</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-blue-50 p-4 rounded-md mb-4">
-                  <p className="text-xl font-semibold text-blue-600">6.50%</p>
+                <div className="bg-yellow-50 p-4 rounded-md mb-4">
+                  <p className="text-xl font-semibold text-yellow-600">6.50%</p>
                   <p className="text-sm text-gray-500">Interest Rate</p>
                 </div>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Tax-free interest income</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Long-term investment option</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Capital appreciation potential</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Invest Now</Button>
+                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Invest Now</Button>
               </CardFooter>
             </Card>
           </div>

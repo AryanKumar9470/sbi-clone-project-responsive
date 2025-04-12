@@ -9,11 +9,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">About Us</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white">History</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Corporate Governance</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Our Story</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Leadership Team</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Investor Relations</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Careers</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">CSR Activities</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Community Impact</a></li>
             </ul>
           </div>
           
@@ -23,7 +23,7 @@ const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-white">Personal Banking</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Corporate Banking</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">International Banking</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">NRI Banking</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Expat Banking</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Rural Banking</a></li>
             </ul>
           </div>
@@ -49,15 +49,15 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-white"><Linkedin size={20} /></a>
             </div>
             <h3 className="text-lg font-bold mb-2">Contact Us</h3>
-            <p className="text-gray-300">1800-425-3800 (Toll Free)</p>
-            <p className="text-gray-300">contactus@sbi.co.in</p>
+            <p className="text-gray-300">1-800-WEALTH-WAVE (1-800-932-5849)</p>
+            <p className="text-gray-300">contact@wealthwave.com</p>
           </div>
         </div>
         
         <div className="mt-8 pt-4 border-t border-gray-700">
           <div className="flex flex-wrap justify-between">
             <div className="w-full md:w-auto mb-4 md:mb-0">
-              <p className="text-sm text-gray-400">© {new Date().getFullYear()} State Bank of India. All rights reserved.</p>
+              <p className="text-sm text-gray-400">© {new Date().getFullYear()} Wealth Wave Financial Services. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap space-x-4">
               <a href="#" className="text-sm text-gray-400 hover:text-gray-300">Privacy Policy</a>

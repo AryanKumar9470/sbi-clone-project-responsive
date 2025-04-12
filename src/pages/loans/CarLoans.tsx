@@ -45,7 +45,7 @@ const CarLoans = () => {
         </div>
         
         {/* Page Header */}
-        <div className="bg-sbi-blue text-white py-8">
+        <div className="bg-yellow-600 text-white py-8">
           <div className="container">
             <div className="flex items-center">
               <Car className="h-12 w-12 mr-4" />
@@ -65,27 +65,27 @@ const CarLoans = () => {
                 <CardTitle>New Car Loan</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-blue-50 p-4 rounded-md mb-4">
-                  <p className="text-xl font-semibold text-blue-600">7.50%</p>
+                <div className="bg-yellow-50 p-4 rounded-md mb-4">
+                  <p className="text-xl font-semibold text-yellow-600">7.50%</p>
                   <p className="text-sm text-gray-500">Interest Rate</p>
                 </div>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Finance up to 90% of car value</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Tenure up to 7 years</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Special dealer discounts</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Apply Now</Button>
+                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Apply Now</Button>
               </CardFooter>
             </Card>
 
@@ -94,27 +94,27 @@ const CarLoans = () => {
                 <CardTitle>Used Car Loan</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-blue-50 p-4 rounded-md mb-4">
-                  <p className="text-xl font-semibold text-blue-600">9.25%</p>
+                <div className="bg-yellow-50 p-4 rounded-md mb-4">
+                  <p className="text-xl font-semibold text-yellow-600">9.25%</p>
                   <p className="text-sm text-gray-500">Interest Rate</p>
                 </div>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Finance for cars up to 7 years old</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Quick approval process</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Free car valuation service</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Apply Now</Button>
+                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Apply Now</Button>
               </CardFooter>
             </Card>
 
@@ -123,27 +123,27 @@ const CarLoans = () => {
                 <CardTitle>Electric Vehicle Loan</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-blue-50 p-4 rounded-md mb-4">
-                  <p className="text-xl font-semibold text-blue-600">6.75%</p>
+                <div className="bg-yellow-50 p-4 rounded-md mb-4">
+                  <p className="text-xl font-semibold text-yellow-600">6.75%</p>
                   <p className="text-sm text-gray-500">Interest Rate</p>
                 </div>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Special reduced rates for EVs</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Zero processing fee</span>
                   </li>
                   <li className="flex items-center">
-                    <span className="bg-green-500 h-2 w-2 rounded-full mr-2"></span>
+                    <span className="bg-yellow-500 h-2 w-2 rounded-full mr-2"></span>
                     <span>Additional benefits for green vehicles</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Apply Now</Button>
+                <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Apply Now</Button>
               </CardFooter>
             </Card>
           </div>
