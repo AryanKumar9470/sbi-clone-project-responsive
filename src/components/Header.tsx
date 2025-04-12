@@ -1,6 +1,12 @@
 
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Search, Home, CreditCard, Briefcase, Clipboard, ShieldCheck, Headphones, HelpCircle, User, Globe, TrendingUp, LineChart, Landmark, DollarSign } from 'lucide-react';
+import { 
+  Menu, X, ChevronDown, Search, Home, CreditCard, Briefcase, 
+  Clipboard, ShieldCheck, Headphones, HelpCircle, User, Globe, 
+  TrendingUp, LineChart, Landmark, DollarSign, Building, Car, 
+  GraduationCap, Award, Gem, FileText, Heart, Activity, Truck, 
+  Umbrella, Shield
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
@@ -150,6 +156,21 @@ const Header = () => {
                           <Link to="/cards/prepaid-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Prepaid Cards</Link>
                         </NavigationMenuLink>
                       </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/cards/business-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Business Cards</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/cards/forex-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Forex Cards</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/cards/virtual-cards" className="block px-3 py-2 hover:bg-gray-100 rounded">Virtual Cards</Link>
+                        </NavigationMenuLink>
+                      </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -157,7 +178,7 @@ const Header = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="main-nav-link px-0 bg-transparent hover:bg-transparent hover:bg-yellow-700 data-[state=open]:bg-yellow-600 data-[state=open]:text-white h-auto">
                     <div className="flex items-center">
-                      <Home size={16} className="mr-2" />
+                      <DollarSign size={16} className="mr-2" />
                       <span>Loans</span>
                     </div>
                   </NavigationMenuTrigger>
@@ -178,6 +199,21 @@ const Header = () => {
                           <Link to="/loans/car-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Car Loans</Link>
                         </NavigationMenuLink>
                       </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/loans/education-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Education Loans</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/loans/business-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Business Loans</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/loans/gold-loans" className="block px-3 py-2 hover:bg-gray-100 rounded">Gold Loans</Link>
+                        </NavigationMenuLink>
+                      </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -193,22 +229,32 @@ const Header = () => {
                     <ul className="grid w-[300px] gap-1 p-2">
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/investments/mutual-funds" className="block px-3 py-2 hover:bg-gray-100 rounded">Mutual Funds</Link>
+                          <Link to="/investment/mutual-funds" className="block px-3 py-2 hover:bg-gray-100 rounded">Mutual Funds</Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/investments/fixed-deposits" className="block px-3 py-2 hover:bg-gray-100 rounded">Fixed Deposits</Link>
+                          <Link to="/investment/fixed-deposits" className="block px-3 py-2 hover:bg-gray-100 rounded">Fixed Deposits</Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/investments/sip" className="block px-3 py-2 hover:bg-gray-100 rounded">SIP Investments</Link>
+                          <Link to="/investment/sip" className="block px-3 py-2 hover:bg-gray-100 rounded">SIP Investments</Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/investments/stocks" className="block px-3 py-2 hover:bg-gray-100 rounded">Stocks & ETFs</Link>
+                          <Link to="/investment/stocks" className="block px-3 py-2 hover:bg-gray-100 rounded">Stocks & ETFs</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/investment/bonds" className="block px-3 py-2 hover:bg-gray-100 rounded">Bonds</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/investment/commodity-trading" className="block px-3 py-2 hover:bg-gray-100 rounded">Commodity Trading</Link>
                         </NavigationMenuLink>
                       </li>
                     </ul>
@@ -237,6 +283,21 @@ const Header = () => {
                       <li>
                         <NavigationMenuLink asChild>
                           <Link to="/insurance/vehicle" className="block px-3 py-2 hover:bg-gray-100 rounded">Vehicle Insurance</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/insurance/home" className="block px-3 py-2 hover:bg-gray-100 rounded">Home Insurance</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/insurance/travel" className="block px-3 py-2 hover:bg-gray-100 rounded">Travel Insurance</Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/insurance/cyber" className="block px-3 py-2 hover:bg-gray-100 rounded">Cyber Insurance</Link>
                         </NavigationMenuLink>
                       </li>
                     </ul>
